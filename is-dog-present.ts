@@ -21,7 +21,7 @@ export default async function isDogPresent(imageUrl: string) {
 
   const ID : IDFormat = process.env.IDENTIFIER as IDFormat;
 
-  // FETCH IMPORT REQUIRE TO HANDLE WEIRD ERROR. REMOVE TO SEE
+  // FETCH IMPORT REQUIRED TO HANDLE WEIRD ERROR. REMOVE TO SEE
   const replicate = new Replicate({
     auth    : process.env.REPLICATE_API_TOKEN,
     fetch,
