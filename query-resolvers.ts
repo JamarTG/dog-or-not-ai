@@ -1,4 +1,5 @@
 import isDogPresent from "./is-dog-present";
+import { ApolloError } from "apollo-server-express";
 
 const resolvers = {
   Query: {
@@ -15,11 +16,11 @@ const resolvers = {
       )
 
       if(imageUrl.trim() === ""){
-        throw new Error("image url cannot be empty");
+        throw new ApolloError("image url cannot be empty");
       }
       
       if(!isAppropriateResponse){
-        throw new Error(`Silly AI Response with ${dogPresenceStringResponse} instead of true or false  :(`) 
+        throw new ApolloError(`Silly AI Response with ${dogPresenceStringResponse} instead of true or false  :(`) 
       }
       
       const isDogPresentInImage = dogPresenceStringResponse === "true";
