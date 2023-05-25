@@ -14,7 +14,7 @@ async function startApolloServer() {
   server.applyMiddleware({ app });
 
   app.listen({ port : process.env.PORT }, function () {
-    console.log(`🚀 Server started on port 3000. Access it at http://localhost:${process.env.PORT}`);
+    console.log(`🚀 Server started on port ${process.env.PORT}. Access it at http://localhost:${process.env.PORT}`);
   });
 }
 
